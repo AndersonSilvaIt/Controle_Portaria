@@ -59,13 +59,13 @@ namespace Data.RepositorioSQLite {
 						}
 
 						if(item.PropertyType.Name == "DateTime")
-							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd"));
+							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
 						else
 							command.Parameters.AddWithValue("@" + item.Name, item.GetValue(Entity, null));
 
 						switch(item.PropertyType.Name) {
 						case "DateTime":
-							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd"));
+							command.Parameters.AddWithValue("@" + item.Name, ((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss"));
 							break;
 
 						case "String":
@@ -319,7 +319,7 @@ namespace Data.RepositorioSQLite {
 
 					case "DateTime":
 						if(!item.Name.Equals("CadasterDate"))
-							sb.Append($" {item.Name} = '{((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd")}',");
+							sb.Append($" {item.Name} = '{((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss")}',");
 						break;
 
 					case "Boolean":

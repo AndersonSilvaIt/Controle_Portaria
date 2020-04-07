@@ -286,3 +286,4 @@ C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria0
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.csproj.CopyComplete
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.exe
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.pdb
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormUtil.resources

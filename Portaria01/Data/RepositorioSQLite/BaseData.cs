@@ -119,7 +119,7 @@ namespace Data.RepositorioSQLite {
 								break;
 
 							case "DateTime":
-								sb.Append($"{item.Name} Date ,");
+								sb.Append($"{item.Name} DateTime ,");
 								break;
 
 							//SQLite não suporta valor booleano

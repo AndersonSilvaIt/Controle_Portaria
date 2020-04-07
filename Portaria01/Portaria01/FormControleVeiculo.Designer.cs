@@ -42,21 +42,25 @@
 			// 
 			// btnExcluir
 			// 
+			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnExcluir.Location = new System.Drawing.Point(199, 278);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(75, 67);
 			this.btnExcluir.TabIndex = 9;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
 			// 
 			// btnEditar
 			// 
+			this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnEditar.Location = new System.Drawing.Point(115, 278);
 			this.btnEditar.Name = "btnEditar";
 			this.btnEditar.Size = new System.Drawing.Size(75, 67);
 			this.btnEditar.TabIndex = 8;
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
 			// 
 			// btnAdd
 			// 
@@ -71,6 +75,7 @@
 			// 
 			// btnSalvar
 			// 
+			this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSalvar.Location = new System.Drawing.Point(34, 278);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(75, 67);
@@ -218,7 +223,6 @@
 			this.Name = "FormControleVeiculo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FormControleVeiculo";
-			this.Load += new System.EventHandler(this.FormControleVeiculo_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

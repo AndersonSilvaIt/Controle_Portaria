@@ -13,19 +13,14 @@ namespace Portaria01 {
 
 		public FormListPessoa() {
 			InitializeComponent();
-
-			ListPessoa = PessoaRepository.GetAll().ToList();
-
-			var a = ListPessoa.OrderBy(p => p.Nome).ToList();
-			var binding = new BindingList<Pessoa>(a);
-
-			grdPessoa.DataSource = binding;
-			grdPessoa.Refresh();
+			AtualizaFormulario();
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e) {
 			FormPessoa frmPessoa = new FormPessoa();
 			frmPessoa.ShowDialog();
+
+			AtualizaFormulario();
 		}
 
 		private void grdPessoa_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
@@ -35,6 +30,8 @@ namespace Portaria01 {
 
 				FormPessoa frmPessoa = new FormPessoa(_pessoa);
 				frmPessoa.ShowDialog();
+
+				AtualizaFormulario();
 			}
 
 		}
@@ -43,5 +40,18 @@ namespace Portaria01 {
 		private void btnBuscar_Click(object sender, EventArgs e) {
 
 		}
+
+		private void AtualizaFormulario() {
+
+			ListPessoa = PessoaRepository.GetAll().ToList();
+
+			var a = ListPessoa.OrderBy(p => p.Nome).ToList();
+			var binding = new BindingList<Pessoa>(a);
+
+			grdPessoa.DataSource = binding;
+			grdPessoa.Refresh();
+
+		}
+
 	}
 }
