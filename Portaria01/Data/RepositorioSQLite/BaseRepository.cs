@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
 using Data.Entidades;
+using System.Reflection;
 
 namespace Data.RepositorioSQLite {
 
@@ -14,9 +15,10 @@ namespace Data.RepositorioSQLite {
 
 		public static void Save(T Entity) {
 			object[] attributesObject;
-
+			
 			using(var conection = BaseData.DbConnection()) {
 				StringBuilder sb = new StringBuilder();
+				
 				sb.Append($"insert into { Entity.GetType().Name } ( ");
 				var properties = Entity.GetType().GetProperties();
 
@@ -100,6 +102,94 @@ namespace Data.RepositorioSQLite {
 					}
 
 					command.ExecuteNonQuery();
+				}
+			}
+		}
+
+		public static void Update(T Entity) {
+
+			long idEntity = 0;
+			List<PropertyInfo> listPropertyesAux = new List<PropertyInfo>(); ;
+
+			using(var conection = BaseData.DbConnection()) {
+				object instanceEntity = Activator.CreateInstance(Entity.GetType());
+				StringBuilder sb = new StringBuilder();
+				sb.Append($"UPDATE { Entity.GetType().Name } SET  ");
+				var properties = Entity.GetType().GetProperties();
+				object[] attributesObject;
+
+				foreach(var item in properties) {
+					attributesObject = item.GetCustomAttributes(false);
+					if(attributesObject != null && attributesObject.Length > 0 && attributesObject.Any(x => x is NotMappedAttribute)) {
+						continue;
+					}
+
+					switch(item.PropertyType.Name) {
+					case "String":
+						sb.Append($"{item.Name} = '{item.GetValue(Entity, null)?.ToString()?.Replace("'", "''")}',");
+						break;
+
+					case "Decimal":
+						sb.Append($" {item.Name} = {item.GetValue(Entity, null)},");
+						break;
+
+					case "Int32":
+					case "Int64":
+						if(item.Name.ToUpper() != "ID")
+							sb.Append($" {item.Name} = {item.GetValue(Entity, null)},");
+						else {
+							string value = item.GetValue(Entity, null).ToString();
+							long.TryParse(value, out idEntity);
+						}
+						break;
+
+					case "DateTime":
+						if(!item.Name.Equals("CadasterDate"))
+							sb.Append($" {item.Name} = '{((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss")}',");
+						break;
+
+					case "Boolean":
+						bool valueBool = (bool)item.GetValue(Entity, null);
+						int intBoolValue = valueBool == true ? 1 : 0;
+
+						sb.Append($" {item.Name} = {intBoolValue},");
+						break;
+
+					case "Byte[]":
+					case "byte[]":
+						//Adiciono a lista para usar o bytes como parametro, se fizer direto igual os outros ele gera um erro
+						listPropertyesAux.Add(item);
+
+						//byte[] byteValue = (byte[])item.GetValue(Entity, null);
+						//sb.Append($" {item.Name} =  {byteValue},");
+						sb.Append($" {item.Name} =  @{item.Name},");
+						break;
+					}
+				}
+
+				sb.Remove(sb.Length - 1, 1);
+				
+				using(var command = conection.CreateCommand()) {
+
+					if(idEntity > 0) {
+						sb.Append($" where id =  {idEntity}");
+
+						command.CommandText = sb.ToString();
+
+						if(listPropertyesAux.Count > 0) {
+							foreach(var item in listPropertyesAux) {
+								switch(item.PropertyType.Name) {
+
+								case "Byte[]":
+								case "byte[]":
+									byte[] byteValue = (byte[])item.GetValue(Entity, null);
+									command.Parameters.AddWithValue("@" + item.Name, byteValue);
+									break;
+								}
+							}
+						}
+						command.ExecuteNonQuery();
+					}
 				}
 			}
 		}
@@ -192,7 +282,6 @@ namespace Data.RepositorioSQLite {
 									valorByte = (byte[])read[item.Name];
 									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, valorByte);
 								}
-									
 								break;
 							}
 						}
@@ -270,6 +359,16 @@ namespace Data.RepositorioSQLite {
 									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, boolValue);
 								}
 								break;
+
+							case "byte[]":
+							case "Byte[]":
+								byte[] valorByte;
+
+								if(read[item.Name] != null && ((read[item.Name] as byte[]) != null)) {
+									valorByte = (byte[])read[item.Name];
+									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, valorByte);
+								}
+								break;
 							}
 						}
 
@@ -281,69 +380,7 @@ namespace Data.RepositorioSQLite {
 			//return null;
 		}
 
-		public static void Update(T Entity) {
-
-			long idEntity = 0;
-
-			using(var conection = BaseData.DbConnection()) {
-				object instanceEntity = Activator.CreateInstance(Entity.GetType());
-				StringBuilder sb = new StringBuilder();
-				sb.Append($"UPDATE { Entity.GetType().Name } SET  ");
-				var properties = Entity.GetType().GetProperties();
-				object[] attributesObject;
-
-				foreach(var item in properties) {
-					attributesObject = item.GetCustomAttributes(false);
-					if(attributesObject != null && attributesObject.Length > 0 && attributesObject.Any(x => x is NotMappedAttribute)) {
-						continue;
-					}
-
-					switch(item.PropertyType.Name) {
-					case "String":
-						sb.Append($"{item.Name} = '{item.GetValue(Entity, null)?.ToString()?.Replace("'", "''")}',");
-						break;
-
-					case "Decimal":
-						sb.Append($" {item.Name} = {item.GetValue(Entity, null)},");
-						break;
-
-					case "Int32":
-					case "Int64":
-						if(item.Name.ToUpper() != "ID")
-							sb.Append($" {item.Name} = {item.GetValue(Entity, null)},");
-						else {
-							string value = item.GetValue(Entity, null).ToString();
-							long.TryParse(value, out idEntity);
-						}
-						break;
-
-					case "DateTime":
-						if(!item.Name.Equals("CadasterDate"))
-							sb.Append($" {item.Name} = '{((DateTime)item.GetValue(Entity, null)).ToString("yyyy-MM-dd HH:mm:ss")}',");
-						break;
-
-					case "Boolean":
-						bool valueBool = (bool)item.GetValue(Entity, null);
-						int intBoolValue = valueBool == true ? 1 : 0;
-
-						sb.Append($" {item.Name} = {intBoolValue},");
-						break;
-					}
-				}
-
-				sb.Remove(sb.Length - 1, 1);
-
-				using(var command = conection.CreateCommand()) {
-
-					if(idEntity > 0) {
-						sb.Append($" where id =  {idEntity}");
-
-						command.CommandText = sb.ToString();
-						command.ExecuteNonQuery();
-					}
-				}
-			}
-		}
+	
 
 		public static T GetEntity(int id) {
 			var instanceEntity = Activator.CreateInstance<T>();
@@ -392,13 +429,30 @@ namespace Data.RepositorioSQLite {
 								if(read[item.Name] != null && DateTime.TryParse(Convert.ToString(read[item.Name]), out dateValue))
 									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, dateValue);
 								break;
+
+							case "Boolean":
+								if(read[item.Name] != null && int.TryParse(Convert.ToString(read[item.Name]), out intValue)) {
+									bool boolValue = intValue == 1;
+									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, boolValue);
+								}
+								break;
+
+							case "byte[]":
+							case "Byte[]":
+								byte[] valorByte;
+
+								if(read[item.Name] != null && ((read[item.Name] as byte[]) != null)) {
+									valorByte = (byte[])read[item.Name];
+									instanceEntity.GetType().GetProperty(item.Name).SetValue(instanceEntity, valorByte);
+								}
+								break;
 							}
 						}
 					}
 					return instanceEntity;
 				}
 			}
-			return null;
+			
 		}
 	}
 }

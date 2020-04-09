@@ -25,17 +25,10 @@ namespace Portaria01 {
 		}
 
 		private void AtualizaFormulario() {
-
-			ListRegistro = RegistroESRepository.GetAll().ToList();
-
-			var a = ListRegistro;
-			var binding = new BindingList<RegistroEntradaSaida>(a);
-			grdRegistro.DataSource = binding;
-			grdRegistro.Refresh();
+			Search();
 		}
 
 		private void grdRegistro_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-
 			if(e.RowIndex > -1 && e.ColumnIndex > -1) {
 				var _registro = (RegistroEntradaSaida)grdRegistro.Rows[e.RowIndex].DataBoundItem;
 
@@ -43,7 +36,6 @@ namespace Portaria01 {
 
 				AtualizaFormulario();
 			}
-
 		}
 
 		private void btnClear_Click(object sender, EventArgs e) {
@@ -52,33 +44,72 @@ namespace Portaria01 {
 			AtualizaFormulario();
 		}
 
-		private void btnBuscar_Click(object sender, EventArgs e) {
-
+		private void Search() {
 			try {
+				DateTime dtSaidaDe = DateTime.MinValue;
+				DateTime dtSaidaAte = DateTime.MinValue;
+				DateTime dtRetornoDe = DateTime.MinValue;
+				DateTime dtRetornoAte = DateTime.MinValue;
 
-				DateTime dtSaidaDe = DateTime.Parse(txtDataSaidaDe.Text) + DateTime.Parse(txtHoraSaidaDe.Text).TimeOfDay;
-				DateTime dtSaidaAte = DateTime.Parse(txtDataSaidaAte.Text) + DateTime.Parse(txtHoraSaidaAte.Text).TimeOfDay;
-				DateTime dtRetornoDe = DateTime.Parse(txtRetornoDe.Text) + DateTime.Parse(txtHoraRetornoDe.Text).TimeOfDay;
-				DateTime dtRetornoAte = DateTime.Parse(txtDataSaidaAte.Text) + DateTime.Parse(txtHoraSaidaDe.Text).TimeOfDay;
+				if(!string.IsNullOrWhiteSpace(txtDataSaidaDe.Text.Replace("/", ""))) {
+					dtSaidaDe = DateTime.Parse(txtDataSaidaDe.Text);
 
+					if(!string.IsNullOrWhiteSpace(txtHoraSaidaDe.Text.Replace(":", "")))
+						dtSaidaDe += DateTime.Parse(txtHoraSaidaDe.Text).TimeOfDay;
+				}
 
+				if(!string.IsNullOrWhiteSpace(txtDataSaidaAte.Text.Replace("/", ""))) {
+
+					dtSaidaAte = DateTime.Parse(txtDataSaidaAte.Text);
+					if(!string.IsNullOrWhiteSpace(txtHoraSaidaAte.Text.Replace(":", "")))
+						dtSaidaAte += DateTime.Parse(txtHoraSaidaAte.Text).TimeOfDay;
+				}
+
+				if(!string.IsNullOrWhiteSpace(txtRetornoDe.Text.Replace("/", ""))) {
+
+					dtRetornoDe = DateTime.Parse(txtRetornoDe.Text);
+
+					if(!string.IsNullOrWhiteSpace(txtHoraRetornoDe.Text.Replace(":", "")))
+						dtRetornoDe += DateTime.Parse(txtHoraRetornoDe.Text).TimeOfDay;
+				}
+
+				if(!string.IsNullOrWhiteSpace(txtRetornoAte.Text.Replace("/", ""))) {
+
+					dtRetornoAte = DateTime.Parse(txtRetornoAte.Text);
+
+					if(!string.IsNullOrWhiteSpace(txtHoraRetornoAte.Text.Replace(":", "")))
+						dtRetornoAte += DateTime.Parse(txtHoraRetornoAte.Text).TimeOfDay;
+				}
+
+				string nome = txtNome.Text;
+				string veiculo = ddlVeiculo.SelectedItem != null ? ddlVeiculo.SelectedItem.ToString() : "";
+
+				var listRegistro = RegistroESRepository.SearchRegistro(nome, veiculo, dtSaidaDe, dtSaidaAte, dtRetornoDe, dtRetornoAte, 0, "");
+
+				var binding = new BindingList<RegistroEntradaSaida>(listRegistro);
+				grdRegistro.DataSource = binding;
+				grdRegistro.Refresh();
 
 			} catch(ErrorMessageException eme) {
 
 				MessageBox.Show(eme.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-			}
-			catch(Exception ex) {
+			} catch(Exception ex) {
 				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
+		private void btnBuscar_Click(object sender, EventArgs e) {
+
+			Search();
+		}
+
 		private void ValidateFiltro() {
 
-			DateTime dtValidation = DateTime.MinValue; 
+			DateTime dtValidation = DateTime.MinValue;
 
 			if(!string.IsNullOrWhiteSpace(txtDataSaidaDe.Text.Replace(":", "")) &&
-				!DateTime.TryParse(txtDataSaidaDe.Text, out dtValidation)){
+				!DateTime.TryParse(txtDataSaidaDe.Text, out dtValidation)) {
 				txtDataSaidaDe.Focus();
 				throw new ErrorMessageException("Data Inválida");
 			}

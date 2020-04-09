@@ -2,6 +2,8 @@
 using Data.RepositorioSQLite;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -36,7 +38,7 @@ namespace Portaria01 {
 		private void AtualizaFormulario() {
 
 			ListPessoa = new List<Pessoa>() { new Pessoa() { Nome = "", Id = 0 } };
-			ListPessoa.AddRange(PessoaRepository.GetAll().ToList());
+			ListPessoa.AddRange(PessoaRepository.GetAll().Where(x => x.Tipo == "Funcionario").ToList());
 
 			var a = ListPessoa.OrderBy(p => p.Nome).ToList();
 			ddlFuncionario.DataSource = a;
@@ -77,20 +79,16 @@ namespace Portaria01 {
 		private void btnSalvar_Click(object sender, EventArgs e) {
 
 			try {
-
 				TratarCampos();
-
+				//Preencher classe antes de ir para o banco
 				DirtyFields();
-
+				
 				if(_registro.Id == 0) {
 					RegistroESRepository.Save(_registro);
 					MessageBox.Show("Registro salvo com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 				} else {
-
 					RegistroESRepository.Update(_registro);
 					MessageBox.Show("Registro atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					
 				}
 
 				this.Close();
@@ -105,10 +103,14 @@ namespace Portaria01 {
 
 		private void DirtyFields() {
 
-			_registro = new RegistroEntradaSaida();
+			if(_registro == null)
+				_registro = new RegistroEntradaSaida();
 
 			_registro.IdPessoa = int.Parse(ddlFuncionario.SelectedValue.ToString());
 			_registro.PessoaNome = ddlFuncionario.Text;
+			var pessoa = ddlFuncionario.SelectedItem as Pessoa;
+			if(pessoa != null)
+				_registro.PesoaCPF = pessoa.CPF;
 
 			_registro.Tipo = 0;
 			DateTime dtSaida = DateTime.Parse(txtDataSaida.Text) + DateTime.Parse(txtHoraSaida.Text).TimeOfDay;
@@ -217,6 +219,21 @@ namespace Portaria01 {
 
 				MessageBox.Show("Erro ao excluir registro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		private void ddlFuncionario_SelectionChangeCommitted(object sender, EventArgs e) {
+
+			Pessoa pessoa = ((ComboBox)sender).SelectedItem as Pessoa;
+			if(pessoa != null && pessoa.Imagem != null && pessoa.Imagem.Count() > 0)
+				imgPessoa.Image = ByteToImage(pessoa.Imagem);
+		}
+
+		public Image ByteToImage(byte[] imageBytes) {
+			// Convert byte[] to Image
+			MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+			ms.Write(imageBytes, 0, imageBytes.Length);
+			Image image = new Bitmap(ms);
+			return image;
 		}
 	}
 }

@@ -23,6 +23,8 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPessoa));
 			this.txtNome = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -35,7 +37,6 @@
 			this.txtCPF = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.imgPessoa = new System.Windows.Forms.PictureBox();
-			this.btnImagem = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.ddlUF = new System.Windows.Forms.ComboBox();
 			this.txtCEP = new System.Windows.Forms.TextBox();
@@ -49,13 +50,16 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtRua = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.btnSalvar = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.btnExcluir = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.radioButtonVisitante = new System.Windows.Forms.RadioButton();
 			this.radioButtonFuncionario = new System.Windows.Forms.RadioButton();
+			this.btnDeleteImagem = new System.Windows.Forms.Button();
+			this.btnSalvar = new System.Windows.Forms.Button();
+			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnExcluir = new System.Windows.Forms.Button();
+			this.btnImagem = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).BeginInit();
 			this.groupBox2.SuspendLayout();
@@ -172,22 +176,13 @@
 			// 
 			// imgPessoa
 			// 
+			this.imgPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.imgPessoa.Location = new System.Drawing.Point(668, 20);
 			this.imgPessoa.Name = "imgPessoa";
 			this.imgPessoa.Size = new System.Drawing.Size(143, 164);
 			this.imgPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.imgPessoa.TabIndex = 3;
 			this.imgPessoa.TabStop = false;
-			// 
-			// btnImagem
-			// 
-			this.btnImagem.Location = new System.Drawing.Point(703, 195);
-			this.btnImagem.Name = "btnImagem";
-			this.btnImagem.Size = new System.Drawing.Size(75, 23);
-			this.btnImagem.TabIndex = 4;
-			this.btnImagem.Text = "Trocar";
-			this.btnImagem.UseVisualStyleBackColor = true;
-			this.btnImagem.Click += new System.EventHandler(this.btnImagem_Click);
 			// 
 			// groupBox2
 			// 
@@ -350,36 +345,6 @@
 			this.label9.TabIndex = 9;
 			this.label9.Text = "Rua";
 			// 
-			// btnSalvar
-			// 
-			this.btnSalvar.Location = new System.Drawing.Point(38, 484);
-			this.btnSalvar.Name = "btnSalvar";
-			this.btnSalvar.Size = new System.Drawing.Size(72, 61);
-			this.btnSalvar.TabIndex = 6;
-			this.btnSalvar.Text = "Salvar";
-			this.btnSalvar.UseVisualStyleBackColor = true;
-			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.Location = new System.Drawing.Point(116, 484);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(72, 61);
-			this.btnEditar.TabIndex = 7;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.UseVisualStyleBackColor = true;
-			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-			// 
-			// btnExcluir
-			// 
-			this.btnExcluir.Location = new System.Drawing.Point(194, 484);
-			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(72, 61);
-			this.btnExcluir.TabIndex = 8;
-			this.btnExcluir.Text = "Excluir";
-			this.btnExcluir.UseVisualStyleBackColor = true;
-			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
@@ -398,6 +363,7 @@
 			// 
 			this.radioButtonVisitante.AutoSize = true;
 			this.radioButtonVisitante.Checked = true;
+			this.radioButtonVisitante.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.radioButtonVisitante.Location = new System.Drawing.Point(710, 258);
 			this.radioButtonVisitante.Name = "radioButtonVisitante";
 			this.radioButtonVisitante.Size = new System.Drawing.Size(65, 17);
@@ -409,6 +375,7 @@
 			// radioButtonFuncionario
 			// 
 			this.radioButtonFuncionario.AutoSize = true;
+			this.radioButtonFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.radioButtonFuncionario.Location = new System.Drawing.Point(710, 283);
 			this.radioButtonFuncionario.Name = "radioButtonFuncionario";
 			this.radioButtonFuncionario.Size = new System.Drawing.Size(80, 17);
@@ -416,21 +383,81 @@
 			this.radioButtonFuncionario.Text = "Funcionário";
 			this.radioButtonFuncionario.UseVisualStyleBackColor = true;
 			// 
+			// btnDeleteImagem
+			// 
+			this.btnDeleteImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnDeleteImagem.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDeleteImagem.Location = new System.Drawing.Point(789, 191);
+			this.btnDeleteImagem.Name = "btnDeleteImagem";
+			this.btnDeleteImagem.Size = new System.Drawing.Size(22, 23);
+			this.btnDeleteImagem.TabIndex = 13;
+			this.btnDeleteImagem.Text = "x";
+			this.btnDeleteImagem.UseVisualStyleBackColor = true;
+			this.btnDeleteImagem.Click += new System.EventHandler(this.btnDeleteImagem_Click);
+			// 
+			// btnSalvar
+			// 
+			this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+			this.btnSalvar.Location = new System.Drawing.Point(43, 484);
+			this.btnSalvar.Name = "btnSalvar";
+			this.btnSalvar.Size = new System.Drawing.Size(54, 49);
+			this.btnSalvar.TabIndex = 14;
+			this.btnSalvar.UseVisualStyleBackColor = true;
+			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+			// 
+			// btnEditar
+			// 
+			this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+			this.btnEditar.Location = new System.Drawing.Point(103, 484);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(54, 49);
+			this.btnEditar.TabIndex = 15;
+			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+			// 
+			// btnExcluir
+			// 
+			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+			this.btnExcluir.Location = new System.Drawing.Point(163, 484);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(54, 49);
+			this.btnExcluir.TabIndex = 16;
+			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+			// 
+			// btnImagem
+			// 
+			this.btnImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnImagem.Image")));
+			this.btnImagem.Location = new System.Drawing.Point(668, 191);
+			this.btnImagem.Name = "btnImagem";
+			this.btnImagem.Size = new System.Drawing.Size(46, 39);
+			this.btnImagem.TabIndex = 24;
+			this.toolTip1.SetToolTip(this.btnImagem, "Trocar Imagem");
+			this.btnImagem.UseVisualStyleBackColor = true;
+			this.btnImagem.Click += new System.EventHandler(this.btnImagem_Click);
+			// 
 			// FormPessoa
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.DarkSeaGreen;
 			this.ClientSize = new System.Drawing.Size(835, 558);
-			this.Controls.Add(this.radioButtonFuncionario);
-			this.Controls.Add(this.radioButtonVisitante);
-			this.Controls.Add(this.label12);
+			this.Controls.Add(this.btnImagem);
 			this.Controls.Add(this.btnExcluir);
 			this.Controls.Add(this.btnEditar);
 			this.Controls.Add(this.btnSalvar);
+			this.Controls.Add(this.btnDeleteImagem);
+			this.Controls.Add(this.radioButtonFuncionario);
+			this.Controls.Add(this.radioButtonVisitante);
+			this.Controls.Add(this.label12);
 			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.btnImagem);
 			this.Controls.Add(this.imgPessoa);
 			this.Controls.Add(this.groupBox1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "FormPessoa";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Pessoa";
@@ -459,7 +486,6 @@
 		private System.Windows.Forms.TextBox txtFoneComercial;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.PictureBox imgPessoa;
-		private System.Windows.Forms.Button btnImagem;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.TextBox txtCidade;
 		private System.Windows.Forms.Label label6;
@@ -472,13 +498,16 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox txtCEP;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Button btnSalvar;
-		private System.Windows.Forms.Button btnEditar;
-		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.RadioButton radioButtonVisitante;
 		private System.Windows.Forms.RadioButton radioButtonFuncionario;
 		private System.Windows.Forms.ComboBox ddlUF;
+		private System.Windows.Forms.Button btnDeleteImagem;
+		private System.Windows.Forms.Button btnSalvar;
+		private System.Windows.Forms.Button btnEditar;
+		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Button btnImagem;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }

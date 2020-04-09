@@ -12,5 +12,6 @@ namespace Data.Entidades {
 		public string Veiculo { get; set; }
 
 		public string PessoaNome { get; set; }
+		public string PesoaCPF { get; set; }
 	}
 }

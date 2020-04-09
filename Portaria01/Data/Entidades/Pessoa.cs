@@ -2,6 +2,7 @@
 namespace Data.Entidades {
 
 	public class Pessoa : BaseEntity {
+
 		public byte[] Imagem { get; set; }
 		public string Nome { get; set; }
 		public string CPF { get; set; }
@@ -17,6 +18,5 @@ namespace Data.Entidades {
 		public string UF { get; set; }
 		public string Tipo { get; set; }
 
-		
 	}
 }

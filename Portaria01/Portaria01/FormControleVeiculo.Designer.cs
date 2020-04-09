@@ -23,64 +23,67 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormControleVeiculo));
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnEditar = new System.Windows.Forms.Button();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.ddlVeiculo = new System.Windows.Forms.ComboBox();
 			this.ddlFuncionario = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txtDataSaida = new System.Windows.Forms.MaskedTextBox();
 			this.txtHoraSaida = new System.Windows.Forms.MaskedTextBox();
-			this.txtDataRetorno = new System.Windows.Forms.MaskedTextBox();
 			this.txtHoraRetorno = new System.Windows.Forms.MaskedTextBox();
+			this.imgPessoa = new System.Windows.Forms.PictureBox();
+			this.txtDataRetorno = new System.Windows.Forms.MaskedTextBox();
+			this.txtDataSaida = new System.Windows.Forms.MaskedTextBox();
+			this.label1 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnExcluir
 			// 
 			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnExcluir.Location = new System.Drawing.Point(199, 278);
+			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+			this.btnExcluir.Location = new System.Drawing.Point(154, 268);
 			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(75, 67);
+			this.btnExcluir.Size = new System.Drawing.Size(54, 49);
 			this.btnExcluir.TabIndex = 9;
-			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.UseVisualStyleBackColor = true;
 			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
 			// 
 			// btnEditar
 			// 
 			this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnEditar.Location = new System.Drawing.Point(115, 278);
+			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+			this.btnEditar.Location = new System.Drawing.Point(94, 268);
 			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(75, 67);
+			this.btnEditar.Size = new System.Drawing.Size(54, 49);
 			this.btnEditar.TabIndex = 8;
-			this.btnEditar.Text = "Editar";
 			this.btnEditar.UseVisualStyleBackColor = true;
 			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
 			// 
 			// btnAdd
 			// 
 			this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAdd.Location = new System.Drawing.Point(426, 81);
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(425, 79);
 			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(22, 23);
+			this.btnAdd.Size = new System.Drawing.Size(32, 30);
 			this.btnAdd.TabIndex = 22;
-			this.btnAdd.Text = "+";
 			this.btnAdd.UseVisualStyleBackColor = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// btnSalvar
 			// 
 			this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnSalvar.Location = new System.Drawing.Point(34, 278);
+			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+			this.btnSalvar.Location = new System.Drawing.Point(34, 268);
 			this.btnSalvar.Name = "btnSalvar";
-			this.btnSalvar.Size = new System.Drawing.Size(75, 67);
+			this.btnSalvar.Size = new System.Drawing.Size(54, 49);
 			this.btnSalvar.TabIndex = 7;
-			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.UseVisualStyleBackColor = true;
 			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
@@ -103,15 +106,6 @@
 			this.label3.Size = new System.Drawing.Size(81, 18);
 			this.label3.TabIndex = 16;
 			this.label3.Text = "Funcionário";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(176, 26);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(37, 13);
-			this.label1.TabIndex = 14;
-			this.label1.Text = "LOGO";
 			// 
 			// label5
 			// 
@@ -149,6 +143,7 @@
 			this.ddlFuncionario.Name = "ddlFuncionario";
 			this.ddlFuncionario.Size = new System.Drawing.Size(382, 27);
 			this.ddlFuncionario.TabIndex = 0;
+			this.ddlFuncionario.SelectionChangeCommitted += new System.EventHandler(this.ddlFuncionario_SelectionChangeCommitted);
 			// 
 			// label2
 			// 
@@ -160,16 +155,6 @@
 			this.label2.TabIndex = 29;
 			this.label2.Text = "Retorno";
 			// 
-			// txtDataSaida
-			// 
-			this.txtDataSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDataSaida.Location = new System.Drawing.Point(34, 221);
-			this.txtDataSaida.Mask = "00/00/0000";
-			this.txtDataSaida.Name = "txtDataSaida";
-			this.txtDataSaida.Size = new System.Drawing.Size(82, 27);
-			this.txtDataSaida.TabIndex = 3;
-			this.txtDataSaida.ValidatingType = typeof(System.DateTime);
-			// 
 			// txtHoraSaida
 			// 
 			this.txtHoraSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,16 +164,6 @@
 			this.txtHoraSaida.Size = new System.Drawing.Size(47, 27);
 			this.txtHoraSaida.TabIndex = 4;
 			this.txtHoraSaida.ValidatingType = typeof(System.DateTime);
-			// 
-			// txtDataRetorno
-			// 
-			this.txtDataRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDataRetorno.Location = new System.Drawing.Point(265, 221);
-			this.txtDataRetorno.Mask = "00/00/0000";
-			this.txtDataRetorno.Name = "txtDataRetorno";
-			this.txtDataRetorno.Size = new System.Drawing.Size(87, 27);
-			this.txtDataRetorno.TabIndex = 5;
-			this.txtDataRetorno.ValidatingType = typeof(System.DateTime);
 			// 
 			// txtHoraRetorno
 			// 
@@ -200,11 +175,54 @@
 			this.txtHoraRetorno.TabIndex = 6;
 			this.txtHoraRetorno.ValidatingType = typeof(System.DateTime);
 			// 
+			// imgPessoa
+			// 
+			this.imgPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.imgPessoa.Location = new System.Drawing.Point(477, 81);
+			this.imgPessoa.Name = "imgPessoa";
+			this.imgPessoa.Size = new System.Drawing.Size(146, 188);
+			this.imgPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.imgPessoa.TabIndex = 43;
+			this.imgPessoa.TabStop = false;
+			// 
+			// txtDataRetorno
+			// 
+			this.txtDataRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDataRetorno.Location = new System.Drawing.Point(265, 221);
+			this.txtDataRetorno.Mask = "00/00/0000";
+			this.txtDataRetorno.Name = "txtDataRetorno";
+			this.txtDataRetorno.Size = new System.Drawing.Size(87, 27);
+			this.txtDataRetorno.TabIndex = 5;
+			this.txtDataRetorno.ValidatingType = typeof(System.DateTime);
+			// 
+			// txtDataSaida
+			// 
+			this.txtDataSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDataSaida.Location = new System.Drawing.Point(34, 221);
+			this.txtDataSaida.Mask = "00/00/0000";
+			this.txtDataSaida.Name = "txtDataSaida";
+			this.txtDataSaida.Size = new System.Drawing.Size(82, 27);
+			this.txtDataSaida.TabIndex = 3;
+			this.txtDataSaida.ValidatingType = typeof(System.DateTime);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(156, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(247, 33);
+			this.label1.TabIndex = 44;
+			this.label1.Text = "Cadastro E/S Veículo";
+			// 
 			// FormControleVeiculo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(472, 368);
+			this.BackColor = System.Drawing.Color.DarkSeaGreen;
+			this.ClientSize = new System.Drawing.Size(641, 334);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.imgPessoa);
 			this.Controls.Add(this.txtHoraRetorno);
 			this.Controls.Add(this.txtDataRetorno);
 			this.Controls.Add(this.txtHoraSaida);
@@ -219,10 +237,11 @@
 			this.Controls.Add(this.btnSalvar);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label1);
+			this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "FormControleVeiculo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "FormControleVeiculo";
+			this.Text = "Formulário Controle E/S Veículo";
+			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -236,14 +255,15 @@
 		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox ddlVeiculo;
 		private System.Windows.Forms.ComboBox ddlFuncionario;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.MaskedTextBox txtDataSaida;
 		private System.Windows.Forms.MaskedTextBox txtHoraSaida;
-		private System.Windows.Forms.MaskedTextBox txtDataRetorno;
 		private System.Windows.Forms.MaskedTextBox txtHoraRetorno;
+		private System.Windows.Forms.PictureBox imgPessoa;
+		private System.Windows.Forms.MaskedTextBox txtDataRetorno;
+		private System.Windows.Forms.MaskedTextBox txtDataSaida;
+		private System.Windows.Forms.Label label1;
 	}
 }

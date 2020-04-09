@@ -23,154 +23,214 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormControleVisitante));
+			this.txtHoraRetorno = new System.Windows.Forms.MaskedTextBox();
+			this.txtDataRetorno = new System.Windows.Forms.MaskedTextBox();
+			this.txtHoraSaida = new System.Windows.Forms.MaskedTextBox();
+			this.txtDataSaida = new System.Windows.Forms.MaskedTextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.ddlVisitante = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.imgPessoa = new System.Windows.Forms.PictureBox();
+			this.btnSalvar = new System.Windows.Forms.Button();
+			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnExcluir = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.btnAdd = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// label1
+			// txtHoraRetorno
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(195, 19);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(37, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "LOGO";
+			this.txtHoraRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtHoraRetorno.Location = new System.Drawing.Point(363, 170);
+			this.txtHoraRetorno.Mask = "00:00";
+			this.txtHoraRetorno.Name = "txtHoraRetorno";
+			this.txtHoraRetorno.Size = new System.Drawing.Size(45, 27);
+			this.txtHoraRetorno.TabIndex = 35;
+			this.txtHoraRetorno.ValidatingType = typeof(System.DateTime);
 			// 
-			// textBox1
+			// txtDataRetorno
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(57, 74);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(382, 27);
-			this.textBox1.TabIndex = 4;
+			this.txtDataRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDataRetorno.Location = new System.Drawing.Point(270, 170);
+			this.txtDataRetorno.Mask = "00/00/0000";
+			this.txtDataRetorno.Name = "txtDataRetorno";
+			this.txtDataRetorno.Size = new System.Drawing.Size(87, 27);
+			this.txtDataRetorno.TabIndex = 34;
+			this.txtDataRetorno.ValidatingType = typeof(System.DateTime);
 			// 
-			// label3
+			// txtHoraSaida
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(54, 53);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(51, 18);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "Pessoa";
+			this.txtHoraSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtHoraSaida.Location = new System.Drawing.Point(127, 170);
+			this.txtHoraSaida.Mask = "00:00";
+			this.txtHoraSaida.Name = "txtHoraSaida";
+			this.txtHoraSaida.Size = new System.Drawing.Size(47, 27);
+			this.txtHoraSaida.TabIndex = 33;
+			this.txtHoraSaida.ValidatingType = typeof(System.DateTime);
 			// 
-			// textBox2
+			// txtDataSaida
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(57, 131);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(155, 27);
-			this.textBox2.TabIndex = 6;
+			this.txtDataSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDataSaida.Location = new System.Drawing.Point(39, 170);
+			this.txtDataSaida.Mask = "00/00/0000";
+			this.txtDataSaida.Name = "txtDataSaida";
+			this.txtDataSaida.Size = new System.Drawing.Size(82, 27);
+			this.txtDataSaida.TabIndex = 32;
+			this.txtDataSaida.ValidatingType = typeof(System.DateTime);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(54, 110);
+			this.label2.Location = new System.Drawing.Point(267, 149);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(55, 18);
-			this.label2.TabIndex = 7;
-			this.label2.Text = "Entrada";
+			this.label2.Size = new System.Drawing.Size(58, 18);
+			this.label2.TabIndex = 41;
+			this.label2.Text = "Retorno";
 			// 
-			// textBox3
+			// ddlVisitante
 			// 
-			this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(284, 131);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(155, 27);
-			this.textBox3.TabIndex = 8;
+			this.ddlVisitante.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlVisitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlVisitante.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ddlVisitante.FormattingEnabled = true;
+			this.ddlVisitante.Location = new System.Drawing.Point(35, 87);
+			this.ddlVisitante.MaxLength = 1;
+			this.ddlVisitante.Name = "ddlVisitante";
+			this.ddlVisitante.Size = new System.Drawing.Size(382, 27);
+			this.ddlVisitante.TabIndex = 30;
+			this.ddlVisitante.SelectionChangeCommitted += new System.EventHandler(this.ddlVisitante_SelectionChangeCommitted);
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(281, 110);
+			this.label4.Location = new System.Drawing.Point(36, 149);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(40, 18);
-			this.label4.TabIndex = 9;
+			this.label4.TabIndex = 38;
 			this.label4.Text = "Saída";
 			// 
-			// button1
+			// label3
 			// 
-			this.button1.Location = new System.Drawing.Point(57, 195);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 67);
-			this.button1.TabIndex = 10;
-			this.button1.Text = "Salvar";
-			this.button1.UseVisualStyleBackColor = true;
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(32, 66);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 18);
+			this.label3.TabIndex = 37;
+			this.label3.Text = "Visitante";
 			// 
-			// button2
+			// imgPessoa
 			// 
-			this.button2.Location = new System.Drawing.Point(445, 74);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(22, 23);
-			this.button2.TabIndex = 11;
-			this.button2.Text = "+";
-			this.button2.UseVisualStyleBackColor = true;
+			this.imgPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.imgPessoa.Location = new System.Drawing.Point(468, 87);
+			this.imgPessoa.Name = "imgPessoa";
+			this.imgPessoa.Size = new System.Drawing.Size(146, 188);
+			this.imgPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.imgPessoa.TabIndex = 42;
+			this.imgPessoa.TabStop = false;
 			// 
-			// button3
+			// btnSalvar
 			// 
-			this.button3.Location = new System.Drawing.Point(157, 195);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 67);
-			this.button3.TabIndex = 12;
-			this.button3.Text = "Editar";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+			this.btnSalvar.Location = new System.Drawing.Point(35, 225);
+			this.btnSalvar.Name = "btnSalvar";
+			this.btnSalvar.Size = new System.Drawing.Size(54, 49);
+			this.btnSalvar.TabIndex = 43;
+			this.btnSalvar.UseVisualStyleBackColor = true;
+			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
-			// button4
+			// btnEditar
 			// 
-			this.button4.Location = new System.Drawing.Point(268, 195);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(75, 67);
-			this.button4.TabIndex = 13;
-			this.button4.Text = "Excluir";
-			this.button4.UseVisualStyleBackColor = true;
+			this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+			this.btnEditar.Location = new System.Drawing.Point(95, 226);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(54, 49);
+			this.btnEditar.TabIndex = 44;
+			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+			// 
+			// btnExcluir
+			// 
+			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+			this.btnExcluir.Location = new System.Drawing.Point(156, 226);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(54, 49);
+			this.btnExcluir.TabIndex = 45;
+			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(130, 18);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(264, 33);
+			this.label1.TabIndex = 46;
+			this.label1.Text = "Cadastro E/S Visitante";
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(421, 85);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(32, 30);
+			this.btnAdd.TabIndex = 47;
+			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// FormControleVisitante
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(491, 283);
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label3);
+			this.BackColor = System.Drawing.Color.DarkSeaGreen;
+			this.ClientSize = new System.Drawing.Size(654, 302);
+			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.label1);
+			this.Controls.Add(this.btnExcluir);
+			this.Controls.Add(this.btnEditar);
+			this.Controls.Add(this.btnSalvar);
+			this.Controls.Add(this.imgPessoa);
+			this.Controls.Add(this.txtHoraRetorno);
+			this.Controls.Add(this.txtDataRetorno);
+			this.Controls.Add(this.txtHoraSaida);
+			this.Controls.Add(this.txtDataSaida);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.ddlVisitante);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label3);
 			this.Name = "FormControleVisitante";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "FormRegistro";
+			this.Text = "Registro de Visitantes";
+			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.MaskedTextBox txtHoraRetorno;
+		private System.Windows.Forms.MaskedTextBox txtDataRetorno;
+		private System.Windows.Forms.MaskedTextBox txtHoraSaida;
+		private System.Windows.Forms.MaskedTextBox txtDataSaida;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.ComboBox ddlVisitante;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.PictureBox imgPessoa;
+		private System.Windows.Forms.Button btnSalvar;
+		private System.Windows.Forms.Button btnEditar;
+		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btnAdd;
 	}
 }

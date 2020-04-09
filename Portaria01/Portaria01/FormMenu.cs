@@ -12,11 +12,13 @@ namespace Portaria01 {
 		}
 
 		private void btnControleVeiculo_Click(object sender, EventArgs e) {
-			new FormListaControleVeiculo().ShowDialog();
+			//new FormListaControleVeiculo().ShowDialog();
+			var telaControleVeiculo = new FormListaControleVeiculo();
+			telaControleVeiculo.ShowDialog();
 		}
 
 		private void btnControleVisitante_Click(object sender, EventArgs e) {
-			new FormControleVisitante().ShowDialog();
+			new FormListaControleVisitante().ShowDialog();
 		}
 	}
 }
