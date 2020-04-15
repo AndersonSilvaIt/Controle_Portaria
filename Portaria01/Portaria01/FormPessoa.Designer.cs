@@ -60,9 +60,12 @@
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnImagem = new System.Windows.Forms.Button();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+			this.label13 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).BeginInit();
 			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtNome
@@ -95,7 +98,7 @@
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.txtNome);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(23, 14);
+			this.groupBox1.Location = new System.Drawing.Point(23, 49);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(633, 219);
 			this.groupBox1.TabIndex = 2;
@@ -177,7 +180,7 @@
 			// imgPessoa
 			// 
 			this.imgPessoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.imgPessoa.Location = new System.Drawing.Point(668, 20);
+			this.imgPessoa.Location = new System.Drawing.Point(668, 55);
 			this.imgPessoa.Name = "imgPessoa";
 			this.imgPessoa.Size = new System.Drawing.Size(143, 164);
 			this.imgPessoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +201,7 @@
 			this.groupBox2.Controls.Add(this.label8);
 			this.groupBox2.Controls.Add(this.txtRua);
 			this.groupBox2.Controls.Add(this.label9);
-			this.groupBox2.Location = new System.Drawing.Point(23, 246);
+			this.groupBox2.Location = new System.Drawing.Point(23, 281);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(633, 226);
 			this.groupBox2.TabIndex = 5;
@@ -348,7 +351,7 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(676, 258);
+			this.label12.Location = new System.Drawing.Point(676, 293);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(28, 13);
 			this.label12.TabIndex = 9;
@@ -364,7 +367,7 @@
 			this.radioButtonVisitante.AutoSize = true;
 			this.radioButtonVisitante.Checked = true;
 			this.radioButtonVisitante.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButtonVisitante.Location = new System.Drawing.Point(710, 258);
+			this.radioButtonVisitante.Location = new System.Drawing.Point(710, 293);
 			this.radioButtonVisitante.Name = "radioButtonVisitante";
 			this.radioButtonVisitante.Size = new System.Drawing.Size(65, 17);
 			this.radioButtonVisitante.TabIndex = 11;
@@ -376,7 +379,7 @@
 			// 
 			this.radioButtonFuncionario.AutoSize = true;
 			this.radioButtonFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.radioButtonFuncionario.Location = new System.Drawing.Point(710, 283);
+			this.radioButtonFuncionario.Location = new System.Drawing.Point(710, 318);
 			this.radioButtonFuncionario.Name = "radioButtonFuncionario";
 			this.radioButtonFuncionario.Size = new System.Drawing.Size(80, 17);
 			this.radioButtonFuncionario.TabIndex = 12;
@@ -387,7 +390,7 @@
 			// 
 			this.btnDeleteImagem.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnDeleteImagem.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDeleteImagem.Location = new System.Drawing.Point(789, 191);
+			this.btnDeleteImagem.Location = new System.Drawing.Point(789, 226);
 			this.btnDeleteImagem.Name = "btnDeleteImagem";
 			this.btnDeleteImagem.Size = new System.Drawing.Size(22, 23);
 			this.btnDeleteImagem.TabIndex = 13;
@@ -399,7 +402,7 @@
 			// 
 			this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-			this.btnSalvar.Location = new System.Drawing.Point(43, 484);
+			this.btnSalvar.Location = new System.Drawing.Point(23, 513);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(54, 49);
 			this.btnSalvar.TabIndex = 14;
@@ -410,7 +413,7 @@
 			// 
 			this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-			this.btnEditar.Location = new System.Drawing.Point(103, 484);
+			this.btnEditar.Location = new System.Drawing.Point(83, 513);
 			this.btnEditar.Name = "btnEditar";
 			this.btnEditar.Size = new System.Drawing.Size(54, 49);
 			this.btnEditar.TabIndex = 15;
@@ -421,7 +424,7 @@
 			// 
 			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-			this.btnExcluir.Location = new System.Drawing.Point(163, 484);
+			this.btnExcluir.Location = new System.Drawing.Point(143, 513);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(54, 49);
 			this.btnExcluir.TabIndex = 16;
@@ -432,7 +435,7 @@
 			// 
 			this.btnImagem.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnImagem.Image")));
-			this.btnImagem.Location = new System.Drawing.Point(668, 191);
+			this.btnImagem.Location = new System.Drawing.Point(668, 226);
 			this.btnImagem.Name = "btnImagem";
 			this.btnImagem.Size = new System.Drawing.Size(46, 39);
 			this.btnImagem.TabIndex = 24;
@@ -440,12 +443,35 @@
 			this.btnImagem.UseVisualStyleBackColor = true;
 			this.btnImagem.Click += new System.EventHandler(this.btnImagem_Click);
 			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.Location = new System.Drawing.Point(204, 9);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(376, 33);
+			this.label13.TabIndex = 45;
+			this.label13.Text = "Cadastro Funcionário / Visitante";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(0, 1);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(45, 34);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 46;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormPessoa
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSeaGreen;
-			this.ClientSize = new System.Drawing.Size(835, 558);
+			this.ClientSize = new System.Drawing.Size(835, 576);
+			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.label13);
 			this.Controls.Add(this.btnImagem);
 			this.Controls.Add(this.btnExcluir);
 			this.Controls.Add(this.btnEditar);
@@ -467,6 +493,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -509,5 +536,7 @@
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Button btnImagem;
 		private System.Windows.Forms.ToolTip toolTip1;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

@@ -56,8 +56,10 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// grdRegistro
@@ -88,7 +90,7 @@
 			this.grdRegistro.ShowCellToolTips = false;
 			this.grdRegistro.ShowEditingIcon = false;
 			this.grdRegistro.ShowRowErrors = false;
-			this.grdRegistro.Size = new System.Drawing.Size(760, 254);
+			this.grdRegistro.Size = new System.Drawing.Size(760, 268);
 			this.grdRegistro.TabIndex = 19;
 			this.grdRegistro.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdRegistro_CellDoubleClick);
 			// 
@@ -392,12 +394,24 @@
 			this.label9.TabIndex = 23;
 			this.label9.Text = "Lista Registro E/S Visitantes";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(45, 34);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 26;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormListaControleVisitante
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightGray;
-			this.ClientSize = new System.Drawing.Size(789, 507);
+			this.ClientSize = new System.Drawing.Size(789, 558);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.btnAdd);
@@ -409,6 +423,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -448,5 +463,6 @@
 		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.Button btnClear;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

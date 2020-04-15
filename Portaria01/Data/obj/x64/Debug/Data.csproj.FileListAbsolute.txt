@@ -1,0 +1,17 @@
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\Data.dll.config
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\Data.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\Data.pdb
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\EntityFramework.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\System.Data.SQLite.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\EntityFramework.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\EntityFramework.SqlServer.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\System.Data.SQLite.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\x64\Debug\System.Data.SQLite.dll.config
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\x64\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\x64\Debug\Data.csproj.CopyComplete
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\x64\Debug\Data.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\x64\Debug\Data.pdb
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\x64\Debug\Data.csprojAssemblyReference.cache

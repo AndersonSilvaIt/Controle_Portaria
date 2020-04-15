@@ -38,7 +38,9 @@
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAdd = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtHoraRetorno
@@ -188,12 +190,24 @@
 			this.btnAdd.UseVisualStyleBackColor = true;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(45, 34);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 48;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormControleVisitante
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSeaGreen;
 			this.ClientSize = new System.Drawing.Size(654, 302);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnExcluir);
@@ -212,6 +226,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Registro de Visitantes";
 			((System.ComponentModel.ISupportInitialize)(this.imgPessoa)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -232,5 +247,6 @@
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnAdd;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

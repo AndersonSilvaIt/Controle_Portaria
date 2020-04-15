@@ -1,0 +1,17 @@
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\Data.dll.config
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\Data.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\Data.pdb
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\EntityFramework.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\System.Data.SQLite.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\EntityFramework.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\System.Data.SQLite.xml
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\bin\Release\System.Data.SQLite.dll.config
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Release\Data.csprojAssemblyReference.cache
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Release\Data.csproj.CoreCompileInputs.cache
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Release\Data.csproj.CopyComplete
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Release\Data.dll
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Release\Data.pdb

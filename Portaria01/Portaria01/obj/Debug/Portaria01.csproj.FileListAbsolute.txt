@@ -280,10 +280,10 @@ C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria0
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormMenu.resources
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormControleVisitante.resources
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormPessoa.resources
+C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormUtil.resources
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.Properties.Resources.resources
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.csproj.GenerateResource.cache
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.csproj.CoreCompileInputs.cache
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.csproj.CopyComplete
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.exe
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.pdb
-C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Portaria01\obj\Debug\Portaria01.FormUtil.resources

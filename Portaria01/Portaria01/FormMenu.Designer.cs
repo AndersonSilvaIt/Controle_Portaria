@@ -28,6 +28,8 @@
 			this.btnControleVisitante = new System.Windows.Forms.Button();
 			this.btnControleVeiculo = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnListPessoa
@@ -95,12 +97,24 @@
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Controle Portaria";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(0, 1);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(62, 50);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MediumTurquoise;
 			this.ClientSize = new System.Drawing.Size(499, 341);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnControleVisitante);
 			this.Controls.Add(this.btnControleVeiculo);
@@ -112,6 +126,7 @@
 			this.Name = "FormMenu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Menu Principal";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -122,5 +137,6 @@
 		private System.Windows.Forms.Button btnControleVisitante;
 		private System.Windows.Forms.Button btnControleVeiculo;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

@@ -22,7 +22,7 @@ namespace Portaria01 {
 		}
 
 		public FormControleVisitante(RegistroEntradaSaida registro) {
-
+			InitializeComponent();
 			this._registro = registro;
 
 			AtualizaFormulario();

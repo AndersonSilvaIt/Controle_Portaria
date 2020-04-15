@@ -56,8 +56,10 @@
 			this.CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -399,12 +401,24 @@
 			this.label9.TabIndex = 20;
 			this.label9.Text = "Lista Registro E/S Veículos";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(45, 34);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 26;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormListaControleVeiculo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightGray;
 			this.ClientSize = new System.Drawing.Size(789, 632);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.btnClear);
@@ -416,6 +430,7 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -455,5 +470,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn CadasterDate;
 		private System.Windows.Forms.ComboBox ddlVeiculo;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
