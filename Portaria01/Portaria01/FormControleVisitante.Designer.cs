@@ -24,8 +24,8 @@
 		/// </summary>
 		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormControleVisitante));
-			this.txtHoraRetorno = new System.Windows.Forms.MaskedTextBox();
-			this.txtDataRetorno = new System.Windows.Forms.MaskedTextBox();
+			this.txtHoraEntrada = new System.Windows.Forms.MaskedTextBox();
+			this.txtDtEntrada = new System.Windows.Forms.MaskedTextBox();
 			this.txtHoraSaida = new System.Windows.Forms.MaskedTextBox();
 			this.txtDataSaida = new System.Windows.Forms.MaskedTextBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -43,30 +43,30 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// txtHoraRetorno
+			// txtHoraEntrada
 			// 
-			this.txtHoraRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHoraRetorno.Location = new System.Drawing.Point(363, 170);
-			this.txtHoraRetorno.Mask = "00:00";
-			this.txtHoraRetorno.Name = "txtHoraRetorno";
-			this.txtHoraRetorno.Size = new System.Drawing.Size(45, 27);
-			this.txtHoraRetorno.TabIndex = 35;
-			this.txtHoraRetorno.ValidatingType = typeof(System.DateTime);
+			this.txtHoraEntrada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtHoraEntrada.Location = new System.Drawing.Point(127, 169);
+			this.txtHoraEntrada.Mask = "00:00";
+			this.txtHoraEntrada.Name = "txtHoraEntrada";
+			this.txtHoraEntrada.Size = new System.Drawing.Size(45, 27);
+			this.txtHoraEntrada.TabIndex = 35;
+			this.txtHoraEntrada.ValidatingType = typeof(System.DateTime);
 			// 
-			// txtDataRetorno
+			// txtDtEntrada
 			// 
-			this.txtDataRetorno.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDataRetorno.Location = new System.Drawing.Point(270, 170);
-			this.txtDataRetorno.Mask = "00/00/0000";
-			this.txtDataRetorno.Name = "txtDataRetorno";
-			this.txtDataRetorno.Size = new System.Drawing.Size(87, 27);
-			this.txtDataRetorno.TabIndex = 34;
-			this.txtDataRetorno.ValidatingType = typeof(System.DateTime);
+			this.txtDtEntrada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDtEntrada.Location = new System.Drawing.Point(34, 169);
+			this.txtDtEntrada.Mask = "00/00/0000";
+			this.txtDtEntrada.Name = "txtDtEntrada";
+			this.txtDtEntrada.Size = new System.Drawing.Size(87, 27);
+			this.txtDtEntrada.TabIndex = 34;
+			this.txtDtEntrada.ValidatingType = typeof(System.DateTime);
 			// 
 			// txtHoraSaida
 			// 
 			this.txtHoraSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtHoraSaida.Location = new System.Drawing.Point(127, 170);
+			this.txtHoraSaida.Location = new System.Drawing.Point(370, 169);
 			this.txtHoraSaida.Mask = "00:00";
 			this.txtHoraSaida.Name = "txtHoraSaida";
 			this.txtHoraSaida.Size = new System.Drawing.Size(47, 27);
@@ -76,7 +76,7 @@
 			// txtDataSaida
 			// 
 			this.txtDataSaida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDataSaida.Location = new System.Drawing.Point(39, 170);
+			this.txtDataSaida.Location = new System.Drawing.Point(282, 169);
 			this.txtDataSaida.Mask = "00/00/0000";
 			this.txtDataSaida.Name = "txtDataSaida";
 			this.txtDataSaida.Size = new System.Drawing.Size(82, 27);
@@ -87,11 +87,11 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(267, 149);
+			this.label2.Location = new System.Drawing.Point(31, 148);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(58, 18);
+			this.label2.Size = new System.Drawing.Size(55, 18);
 			this.label2.TabIndex = 41;
-			this.label2.Text = "Retorno";
+			this.label2.Text = "Entrada";
 			// 
 			// ddlVisitante
 			// 
@@ -110,7 +110,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(36, 149);
+			this.label4.Location = new System.Drawing.Point(279, 148);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(40, 18);
 			this.label4.TabIndex = 38;
@@ -214,8 +214,8 @@
 			this.Controls.Add(this.btnEditar);
 			this.Controls.Add(this.btnSalvar);
 			this.Controls.Add(this.imgPessoa);
-			this.Controls.Add(this.txtHoraRetorno);
-			this.Controls.Add(this.txtDataRetorno);
+			this.Controls.Add(this.txtHoraEntrada);
+			this.Controls.Add(this.txtDtEntrada);
 			this.Controls.Add(this.txtHoraSaida);
 			this.Controls.Add(this.txtDataSaida);
 			this.Controls.Add(this.label2);
@@ -233,8 +233,8 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.MaskedTextBox txtHoraRetorno;
-		private System.Windows.Forms.MaskedTextBox txtDataRetorno;
+		private System.Windows.Forms.MaskedTextBox txtHoraEntrada;
+		private System.Windows.Forms.MaskedTextBox txtDtEntrada;
 		private System.Windows.Forms.MaskedTextBox txtHoraSaida;
 		private System.Windows.Forms.MaskedTextBox txtDataSaida;
 		private System.Windows.Forms.Label label2;

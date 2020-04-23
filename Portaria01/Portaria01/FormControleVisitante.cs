@@ -48,19 +48,21 @@ namespace Portaria01 {
 
 			if(_registro == null) {
 				DateTime dtNow = DateTime.Now;
-				txtDataSaida.Text = dtNow.ToString("dd/MM/yyyy");
-				txtHoraSaida.Text = dtNow.ToString("HH:mm");
+				txtDtEntrada.Text = dtNow.ToString("dd/MM/yyyy");
+				txtHoraEntrada.Text = dtNow.ToString("HH:mm");
 			}
 		}
 
 		private void FillFields() {
 
-			txtDataSaida.Text = _registro.DataSaida.ToString("dd/MM/yyyy");
-			txtHoraSaida.Text = _registro.DataSaida.ToString("HH:mm");
+			if(_registro.DataSaida != DateTime.MinValue) {
+				txtDataSaida.Text = _registro.DataSaida.ToString("dd/MM/yyyy");
+				txtHoraSaida.Text = _registro.DataSaida.ToString("HH:mm");
+			}
 
 			if(_registro.DataEntrada != DateTime.MinValue) {
-				txtDataRetorno.Text = _registro.DataEntrada.ToString("dd/MM/yyyy");
-				txtHoraRetorno.Text = _registro.DataEntrada.ToString("HH:mm");
+				txtDtEntrada.Text = _registro.DataEntrada.ToString("dd/MM/yyyy");
+				txtHoraEntrada.Text = _registro.DataEntrada.ToString("HH:mm");
 			}
 
 			ddlVisitante.Text = _registro.PessoaNome;
@@ -77,17 +79,19 @@ namespace Portaria01 {
 
 			var pessoa = ddlVisitante.SelectedItem as Pessoa;
 			if(pessoa != null)
-				_registro.PesoaCPF = pessoa.CPF;
+				_registro.PessoaCPF = pessoa.CPF;
 
 			_registro.Tipo = 1;
-			DateTime dtSaida = DateTime.Parse(txtDataSaida.Text) + DateTime.Parse(txtHoraSaida.Text).TimeOfDay;
-			_registro.DataSaida = dtSaida;
 
-			if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "")) &&
-				!string.IsNullOrWhiteSpace(txtHoraRetorno.Text.Replace(":", ""))) {
 
-				DateTime dtRetorno = DateTime.Parse(txtDataRetorno.Text) + DateTime.Parse(txtHoraRetorno.Text).TimeOfDay;
-				_registro.DataEntrada = dtRetorno;
+			DateTime dtEntrada = DateTime.Parse(txtDtEntrada.Text) + DateTime.Parse(txtHoraEntrada.Text).TimeOfDay;
+			_registro.DataEntrada = dtEntrada;
+
+			if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "").Trim()) &&
+				!string.IsNullOrWhiteSpace(txtHoraEntrada.Text.Replace(":", "").Trim())) {
+
+				DateTime dtSaida = DateTime.Parse(txtDataSaida.Text) + DateTime.Parse(txtHoraSaida.Text).TimeOfDay;
+				_registro.DataSaida = dtSaida;
 			}
 
 		}
@@ -100,55 +104,55 @@ namespace Portaria01 {
 			DateTime dtSaida = DateTime.MinValue;
 			DateTime dtRetorno = DateTime.MinValue;
 
-			if(string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", ""))) {
-				txtDataSaida.Focus();
-				throw new ErrorMessageException("Informe a Data de Saída");
+			if(string.IsNullOrEmpty(txtDtEntrada.Text.Replace("/", ""))) {
+				txtDtEntrada.Focus();
+				throw new ErrorMessageException("Informe a Data de Entrada");
 			}
 
-			if(!DateTime.TryParse(txtDataSaida.Text, out dataValidation)) {
-				txtDataSaida.Focus();
-				throw new ErrorMessageException("Data Saida inválida");
+			if(!DateTime.TryParse(txtDtEntrada.Text, out dataValidation)) {
+				txtDtEntrada.Focus();
+				throw new ErrorMessageException("Data Entrada inválida");
 			}
 
-			if(!DateTime.TryParse(txtHoraSaida.Text, out dataValidation)) {
-				txtHoraSaida.Focus();
-				throw new ErrorMessageException("Informe a Data de Saída");
+			if(!DateTime.TryParse(txtHoraEntrada.Text, out dataValidation)) {
+				txtHoraEntrada.Focus();
+				throw new ErrorMessageException("Informe a Hora de Entrada");
 			}
 
-			var hora = txtHoraSaida.Text.Replace(":", "").Trim();
+			var hora = txtHoraEntrada.Text.Replace(":", "").Trim();
 			if(string.IsNullOrWhiteSpace(hora)) {
-				txtDataSaida.Focus();
-				throw new ErrorMessageException("Por gentileza, informe a Hora da consulta.");
+				txtHoraEntrada.Focus();
+				throw new ErrorMessageException("Por gentileza, informe a Hora da Entrada.");
 			}
 
-			if(!DateTime.TryParse(txtHoraSaida.Text, out horavalidator)) {
-				txtDataRetorno.Focus();
-				throw new ErrorMessageException("Informe a Data de Saída");
+			if(!DateTime.TryParse(txtHoraEntrada.Text, out horavalidator)) {
+				txtHoraEntrada.Focus();
+				throw new ErrorMessageException("Informe a Data de Entrada");
 			}
 
 			dataValidation = DateTime.MinValue;
 			horavalidator = DateTime.MinValue;
 
-			//Validação data/hora retorno
+			//Validação data/hora saída
 
-			if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "")) ||
-				!string.IsNullOrWhiteSpace(txtHoraRetorno.Text.Replace(":", ""))) {
+			if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "").Trim()) ||
+				!string.IsNullOrWhiteSpace(txtHoraSaida.Text.Replace(":", "").Trim())) {
 
-				if(string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "")))
+				if(string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "").Trim()))
 					throw new ErrorMessageException("Preencha a data de retorno");
 
-				if(string.IsNullOrEmpty(txtHoraSaida.Text.Replace(":", "")))
+				if(string.IsNullOrEmpty(txtHoraSaida.Text.Replace(":", "").Trim()))
 					throw new ErrorMessageException("Preencha a hora de retorno");
 
-				if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "")) &&
+				if(!string.IsNullOrEmpty(txtDataSaida.Text.Replace("/", "").Trim()) &&
 					!DateTime.TryParse(txtDataSaida.Text, out dataValidation)) {
-					txtDataRetorno.Focus();
+					txtDtEntrada.Focus();
 					throw new ErrorMessageException("Data Retorno inválida");
 				}
 
-				if(!string.IsNullOrWhiteSpace(txtHoraRetorno.Text.Replace(":", "")) &&
+				if(!string.IsNullOrWhiteSpace(txtHoraSaida.Text.Replace(":", "").Trim()) &&
 					!DateTime.TryParse(txtHoraSaida.Text, out horavalidator)) {
-					txtDataRetorno.Focus();
+					txtHoraSaida.Focus();
 					throw new ErrorMessageException("Hora Retorno inválida");
 				}
 			}

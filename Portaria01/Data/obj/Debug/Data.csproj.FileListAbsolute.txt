@@ -31,4 +31,3 @@ C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Debug\Data.dll
 C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Debug\Data.pdb
-C:\Users\Prodwin\Desktop\Sistema_Portaria\Controle_Portaria\Portaria01\Data\obj\Debug\Data.csprojAssemblyReference.cache

@@ -25,6 +25,8 @@ namespace Portaria01 {
 				FormPessoa frmPessoa = new FormPessoa(_pessoa);
 				frmPessoa.ShowDialog();
 
+				this.Close();
+
 				AtualizaFormulario();
 			}
 		}
@@ -56,6 +58,8 @@ namespace Portaria01 {
 		private void btnAdd_Click(object sender, EventArgs e) {
 			FormPessoa frmPessoa = new FormPessoa();
 			frmPessoa.ShowDialog();
+
+			this.Close();
 
 			AtualizaFormulario();
 		}

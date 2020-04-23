@@ -20,7 +20,7 @@ namespace Portaria01 {
 		private void btnAdd_Click(object sender, EventArgs e) {
 			new FormControleVeiculo().ShowDialog();
 
-
+			this.Close();
 			AtualizaFormulario();
 		}
 
@@ -33,6 +33,8 @@ namespace Portaria01 {
 				var _registro = (RegistroEntradaSaida)grdRegistro.Rows[e.RowIndex].DataBoundItem;
 
 				new FormControleVeiculo(_registro).ShowDialog();
+
+				this.Close();
 
 				AtualizaFormulario();
 			}
@@ -85,6 +87,18 @@ namespace Portaria01 {
 				string veiculo = ddlVeiculo.SelectedItem != null ? ddlVeiculo.SelectedItem.ToString() : "";
 
 				var listRegistro = RegistroESRepository.SearchRegistro(nome, veiculo, dtSaidaDe, dtSaidaAte, dtRetornoDe, dtRetornoAte, 0, "");
+
+				if(!string.IsNullOrWhiteSpace(ddlSituacao.Text)) {
+					if(listRegistro.Count > 0) {
+
+						string situacao = ddlSituacao.Text;
+						if(situacao == "Aberto") {
+							listRegistro = listRegistro.Where(x => x.DataEntrada == DateTime.MinValue).ToList();
+						} else {
+							listRegistro = listRegistro.Where(x => x.DataEntrada != DateTime.MinValue).ToList();
+						}
+					}
+				}
 
 				var binding = new BindingList<RegistroEntradaSaida>(listRegistro);
 				grdRegistro.DataSource = binding;

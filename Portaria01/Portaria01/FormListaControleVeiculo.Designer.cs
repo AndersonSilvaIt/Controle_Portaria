@@ -57,6 +57,8 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.ddlSituacao = new System.Windows.Forms.ComboBox();
+			this.label10 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +66,8 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.ddlSituacao);
+			this.groupBox1.Controls.Add(this.label10);
 			this.groupBox1.Controls.Add(this.ddlVeiculo);
 			this.groupBox1.Controls.Add(this.label7);
 			this.groupBox1.Controls.Add(this.label8);
@@ -412,6 +416,31 @@
 			this.pictureBox1.TabIndex = 26;
 			this.pictureBox1.TabStop = false;
 			// 
+			// ddlSituacao
+			// 
+			this.ddlSituacao.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlSituacao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ddlSituacao.FormattingEnabled = true;
+			this.ddlSituacao.Items.AddRange(new object[] {
+            " ",
+            "Aberto",
+            "Fechado"});
+			this.ddlSituacao.Location = new System.Drawing.Point(307, 135);
+			this.ddlSituacao.Name = "ddlSituacao";
+			this.ddlSituacao.Size = new System.Drawing.Size(155, 27);
+			this.ddlSituacao.TabIndex = 51;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(304, 114);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(114, 18);
+			this.label10.TabIndex = 52;
+			this.label10.Text = "Situação Registro";
+			// 
 			// FormListaControleVeiculo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,5 +500,7 @@
 		private System.Windows.Forms.ComboBox ddlVeiculo;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ComboBox ddlSituacao;
+		private System.Windows.Forms.Label label10;
 	}
 }

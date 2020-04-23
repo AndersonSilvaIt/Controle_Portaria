@@ -28,11 +28,12 @@
 			this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IdPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DatSaida = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.DataEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DatSaida = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Veiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PessoaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.CadasterDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PessoaCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +58,8 @@
 			this.btnClear = new System.Windows.Forms.Button();
 			this.label9 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.ddlSituacao = new System.Windows.Forms.ComboBox();
+			this.label10 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.grdRegistro)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,11 +78,12 @@
             this.Id,
             this.IdPessoa,
             this.Tipo,
-            this.DatSaida,
             this.DataEntrada,
+            this.DatSaida,
             this.Veiculo,
             this.PessoaNome,
-            this.CadasterDate});
+            this.CadasterDate,
+            this.PessoaCPF});
 			this.grdRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.grdRegistro.Location = new System.Drawing.Point(17, 268);
 			this.grdRegistro.MultiSelect = false;
@@ -115,28 +119,29 @@
 			this.Tipo.Name = "Tipo";
 			this.Tipo.Visible = false;
 			// 
+			// DataEntrada
+			// 
+			this.DataEntrada.DataPropertyName = "DataEntrada";
+			this.DataEntrada.HeaderText = "Data Entrada";
+			this.DataEntrada.Name = "DataEntrada";
+			// 
 			// DatSaida
 			// 
 			this.DatSaida.DataPropertyName = "DataSaida";
 			this.DatSaida.HeaderText = "Data Saída";
 			this.DatSaida.Name = "DatSaida";
 			// 
-			// DataEntrada
-			// 
-			this.DataEntrada.DataPropertyName = "DataEntrada";
-			this.DataEntrada.HeaderText = "Data Retorno";
-			this.DataEntrada.Name = "DataEntrada";
-			// 
 			// Veiculo
 			// 
 			this.Veiculo.DataPropertyName = "Veiculo";
 			this.Veiculo.HeaderText = "Veiculo";
 			this.Veiculo.Name = "Veiculo";
+			this.Veiculo.Visible = false;
 			// 
 			// PessoaNome
 			// 
 			this.PessoaNome.DataPropertyName = "PessoaNome";
-			this.PessoaNome.HeaderText = "Funcionário";
+			this.PessoaNome.HeaderText = "Visitante";
 			this.PessoaNome.Name = "PessoaNome";
 			// 
 			// CadasterDate
@@ -146,8 +151,17 @@
 			this.CadasterDate.Name = "CadasterDate";
 			this.CadasterDate.Visible = false;
 			// 
+			// PessoaCPF
+			// 
+			this.PessoaCPF.DataPropertyName = "PessoaCPF";
+			this.PessoaCPF.HeaderText = "PessoaCPF";
+			this.PessoaCPF.Name = "PessoaCPF";
+			this.PessoaCPF.Visible = false;
+			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.ddlSituacao);
+			this.groupBox1.Controls.Add(this.label10);
 			this.groupBox1.Controls.Add(this.btnBuscar);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.txtCPF);
@@ -405,6 +419,31 @@
 			this.pictureBox1.TabIndex = 26;
 			this.pictureBox1.TabStop = false;
 			// 
+			// ddlSituacao
+			// 
+			this.ddlSituacao.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ddlSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.ddlSituacao.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ddlSituacao.FormattingEnabled = true;
+			this.ddlSituacao.Items.AddRange(new object[] {
+            " ",
+            "Aberto",
+            "Fechado"});
+			this.ddlSituacao.Location = new System.Drawing.Point(307, 133);
+			this.ddlSituacao.Name = "ddlSituacao";
+			this.ddlSituacao.Size = new System.Drawing.Size(155, 27);
+			this.ddlSituacao.TabIndex = 49;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(304, 112);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(114, 18);
+			this.label10.TabIndex = 50;
+			this.label10.Text = "Situação Registro";
+			// 
 			// FormListaControleVisitante
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,14 +471,6 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView grdRegistro;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn IdPessoa;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn DatSaida;
-		private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrada;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PessoaNome;
-		private System.Windows.Forms.DataGridViewTextBoxColumn CadasterDate;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.TextBox txtNome;
 		private System.Windows.Forms.Label label1;
@@ -464,5 +495,16 @@
 		private System.Windows.Forms.Button btnClear;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn IdPessoa;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn DataEntrada;
+		private System.Windows.Forms.DataGridViewTextBoxColumn DatSaida;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Veiculo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PessoaNome;
+		private System.Windows.Forms.DataGridViewTextBoxColumn CadasterDate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PessoaCPF;
+		private System.Windows.Forms.ComboBox ddlSituacao;
+		private System.Windows.Forms.Label label10;
 	}
 }

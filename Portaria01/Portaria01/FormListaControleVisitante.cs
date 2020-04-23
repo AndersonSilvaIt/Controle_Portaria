@@ -28,7 +28,7 @@ namespace Portaria01 {
 				var _registro = (RegistroEntradaSaida)grdRegistro.Rows[e.RowIndex].DataBoundItem;
 
 				new FormControleVisitante(_registro).ShowDialog();
-
+				this.Close();
 				AtualizaFormulario();
 			}
 		}
@@ -76,6 +76,19 @@ namespace Portaria01 {
 				string cpf = txtCPF.Text;
 				var listRegistro = RegistroESRepository.SearchRegistro(nome, "", dtSaidaDe, dtSaidaAte, dtRetornoDe, dtRetornoAte, 1, cpf);
 
+				if(!string.IsNullOrWhiteSpace(ddlSituacao.Text)) {
+					if(listRegistro.Count > 0) {
+
+						string situacao = ddlSituacao.Text;
+
+						if(situacao == "Aberto") {
+							listRegistro = listRegistro.Where(x => x.DataSaida == DateTime.MinValue).ToList();
+						} else {
+							listRegistro = listRegistro.Where(x => x.DataSaida != DateTime.MinValue).ToList();
+						}
+					}
+				}
+
 				var binding = new BindingList<RegistroEntradaSaida>(listRegistro);
 				grdRegistro.DataSource = binding;
 				grdRegistro.Refresh();
@@ -92,6 +105,8 @@ namespace Portaria01 {
 	
 		private void btnAdd_Click(object sender, EventArgs e) {
 			new FormControleVisitante().ShowDialog();
+
+			this.Close();
 
 			AtualizaFormulario();
 		}

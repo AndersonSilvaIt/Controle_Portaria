@@ -70,7 +70,7 @@ namespace Portaria01 {
 			new FormListPessoa().ShowDialog();
 
 			ListPessoa = new List<Pessoa>() { new Pessoa() { Nome = "", Id = 0 } };
-			ListPessoa.AddRange(PessoaRepository.GetAll().ToList());
+			ListPessoa.AddRange(PessoaRepository.GetAll().Where(x => x.Tipo == "Funcionario").ToList());
 
 			var a = ListPessoa.OrderBy(p => p.Nome).ToList();
 			ddlFuncionario.DataSource = a;
@@ -110,7 +110,7 @@ namespace Portaria01 {
 			_registro.PessoaNome = ddlFuncionario.Text;
 			var pessoa = ddlFuncionario.SelectedItem as Pessoa;
 			if(pessoa != null)
-				_registro.PesoaCPF = pessoa.CPF;
+				_registro.PessoaCPF = pessoa.CPF;
 
 			_registro.Tipo = 0;
 			DateTime dtSaida = DateTime.Parse(txtDataSaida.Text) + DateTime.Parse(txtHoraSaida.Text).TimeOfDay;
